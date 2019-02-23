@@ -21,6 +21,7 @@ class CreateCompaniesTable extends Migration
             $table->string('thumbnail');
             $table->string('website')->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
