@@ -8,16 +8,17 @@ use Illuminate\Notifications\Notifiable;
 
 class Employee extends Model
 {
-    use SoftDeletes,Notifiable;
+    use SoftDeletes,No4tifiable;
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'number', 
+        'firstname', 'lastname', 'email', 'number',
     ];
 
 
-    public function company() 
+    public function company()
     {
 
-        return $this->hasOne(Company::Class);
-        
+        return $this->belongsTo(Company::class, 'Comapny_id');
+
+
     }
 }
